@@ -7,7 +7,7 @@
 @time: 2017/6/17 20:54
 """
 
-from flask import Flask
+from flask import Flask, url_for
 app = Flask(__name__)
 
 
@@ -42,5 +42,8 @@ def projects():
 def about():
     return 'The about page'
 
+with app.test_request_context():
+    print(url_for('index'))
+    print(url_for('about'))
 
 
