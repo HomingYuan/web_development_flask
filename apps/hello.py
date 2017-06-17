@@ -7,7 +7,7 @@
 @time: 2017/6/17 20:54
 """
 
-from flask import Flask, url_for
+from flask import Flask, url_for, request
 app = Flask(__name__)
 
 
@@ -42,8 +42,12 @@ def projects():
 def about():
     return 'The about page'
 
-with app.test_request_context():
-    print(url_for('index'))
-    print(url_for('about'))
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        do_the_login()
+    else:
+        show_the_login_form()
 
 
