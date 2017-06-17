@@ -1,0 +1,5 @@
+if it can start normally
+1.close command line and start other one.
+2. setx FLASK_APP = hello.py
+2. flask run
+3. Reference link:https://stackoverflow.com/questions/37826016/error-while-running-minimal-flask-application
